@@ -38,6 +38,11 @@ The project is organized by use cases, with each major feature implemented in it
 - **Key Concepts**: `Set` for uniqueness, `Map` for tracking, Atomic logical operations, Double-booking prevention.
 - **Entry Point**: `UseCase6RoomAllocation.java`
 
+#### [Use Case 7: Add-On Service Selection](https://github.com/Sarvesh-1590/BookMyStayApp/tree/use-case-7-addon-service-selection)
+- **Goal**: Extend the booking model to support optional services like breakfast or spa.
+- **Key Concepts**: One-to-Many Relationship, Business Extensibility, Composition over Inheritance, Cost Aggregation.
+- **Entry Point**: `UseCase7AddOnServiceSelection.java`
+
 ---
 
 ## How to Run
@@ -48,5 +53,5 @@ The project is organized by use cases, with each major feature implemented in it
    ```
 2. Run a specific use case entry point:
    ```bash
-   java UseCase6RoomAllocation
+   java UseCase7AddOnServiceSelection
    ```
