@@ -57,7 +57,11 @@ public class UseCase6RoomAllocation {
         while (queue.hasPendingRequests()) {
             System.out.print("[" + processedCount++ + "] ");
             Reservation nextRequest = queue.getNextRequest();
-            allocationService.allocateRoom(nextRequest, inventory);
+            try {
+                allocationService.allocateRoom(nextRequest, inventory);
+            } catch (InvalidBookingException e) {
+                System.err.println("Booking Error: " + e.getMessage());
+            }
         }
 
         System.out.println("\nFinal Inventory Status:");

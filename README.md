@@ -48,6 +48,11 @@ The project is organized by use cases, with each major feature implemented in it
 - **Key Concepts**: List Data Structure, Ordered Storage, Operational Visibility, Persistence Mindset.
 - **Entry Point**: `UseCase8BookingHistory.java`
 
+#### [Use Case 9: Error Handling & Validation](https://github.com/Sarvesh-1590/BookMyStayApp/tree/use-case-9-error-handling-validation)
+- **Goal**: Strengthen system reliability by introducing structured validation and error handling.
+- **Key Concepts**: Input Validation, Custom Exceptions, Fail-Fast Design, Guarding System State.
+- **Entry Point**: `UseCase9ErrorHandling.java`
+
 ---
 
 ## How to Run
@@ -58,5 +63,5 @@ The project is organized by use cases, with each major feature implemented in it
    ```
 2. Run a specific use case entry point:
    ```bash
-   java UseCase8BookingHistory
+   java UseCase9ErrorHandling
    ```

@@ -51,32 +51,33 @@ public class RoomAllocationService {
      * 
      * @param reservation booking request
      * @param inventory centralized room inventory
+     * @throws InvalidBookingException if validation or state check fails
      */
-    public void allocateRoom(Reservation reservation, RoomInventory inventory) {
+    public void allocateRoom(Reservation reservation, RoomInventory inventory) 
+            throws InvalidBookingException {
+        
+        // 1. Validate before any allocation (Fail-Fast)
+        BookingValidator.validateBookingRequest(reservation, inventory);
+
         String roomType = reservation.getRoomType();
         Map<String, Integer> currentAvailability = inventory.getRoomAvailability();
 
         System.out.println("Processing request for " + reservation.getGuestName() + " (" + roomType + ")...");
 
-        if (currentAvailability.containsKey(roomType) && currentAvailability.get(roomType) > 0) {
-            // Generate unique room ID
-            String roomId = generateRoomId(roomType);
+        // 2. Proceed with Allocation
+        String roomId = generateRoomId(roomType);
 
-            // Uniqueness Enforcement
-            allocatedRoomIds.add(roomId);
-            assignedRoomsByType.get(roomType).add(roomId);
+        // Uniqueness Enforcement
+        allocatedRoomIds.add(roomId);
+        assignedRoomsByType.get(roomType).add(roomId);
 
-            // Inventory Synchronization (Decrement count)
-            int newCount = currentAvailability.get(roomType) - 1;
-            inventory.updateAvailability(roomType, newCount);
+        // Inventory Synchronization
+        int newCount = currentAvailability.get(roomType) - 1;
+        inventory.updateAvailability(roomType, newCount);
 
-            System.out.println("✅ Booking CONFIRMED");
-            System.out.println("   - Room Assigned: " + roomId);
-            System.out.println("   - Inventory Updated: " + newCount + " " + roomType + "(s) remaining.");
-        } else {
-            System.out.println("❌ Booking FAILED");
-            System.out.println("   - Reason: " + roomType + " is out of stock.");
-        }
+        System.out.println("✅ Booking CONFIRMED");
+        System.out.println("   - Room Assigned: " + roomId);
+        System.out.println("   - Inventory Updated: " + newCount + " " + roomType + "(s) remaining.");
         System.out.println("--------------------------------------------------");
     }
 

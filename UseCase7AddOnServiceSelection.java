@@ -38,7 +38,11 @@ public class UseCase7AddOnServiceSelection {
         // 2. Submit and Confirm a Reservation
         System.out.println("[Step 1] Confirming a Reservation...");
         Reservation guestReservation = new Reservation("John Doe", "Suite Room");
-        allocationService.allocateRoom(guestReservation, inventory);
+        try {
+            allocationService.allocateRoom(guestReservation, inventory);
+        } catch (InvalidBookingException e) {
+            System.err.println("Booking Validation Error: " + e.getMessage());
+        }
 
         // Assume the allocated Room ID is captured from the system output or state
         // In a real system, allocateRoom might return the Room ID.

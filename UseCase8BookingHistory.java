@@ -49,10 +49,13 @@ public class UseCase8BookingHistory {
         System.out.println("----------------------------------------------");
         while (queue.hasPendingRequests()) {
             Reservation nextRequest = queue.getNextRequest();
-            allocationService.allocateRoom(nextRequest, inventory);
-            
-            // Critical Point: Add confirmed reservation to history
-            bookingHistory.addRecord(nextRequest);
+            try {
+                allocationService.allocateRoom(nextRequest, inventory);
+                // Record in history ONLY if confirmed
+                bookingHistory.addRecord(nextRequest);
+            } catch (InvalidBookingException e) {
+                System.err.println("Audit Error: " + e.getMessage());
+            }
         }
 
         // 4. Operational Reporting
