@@ -53,6 +53,11 @@ The project is organized by use cases, with each major feature implemented in it
 - **Key Concepts**: Input Validation, Custom Exceptions, Fail-Fast Design, Guarding System State.
 - **Entry Point**: `UseCase9ErrorHandling.java`
 
+#### [Use Case 10: Booking Cancellation & Inventory Rollback](https://github.com/Sarvesh-1590/BookMyStayApp/tree/use-case-10-booking-cancellation-rollback)
+- **Goal**: Enable safe cancellation of confirmed bookings and reversal of system state.
+- **Key Concepts**: State Reversal, Stack Data Structure, LIFO Rollback Logic, Inventory Restoration.
+- **Entry Point**: `UseCase10Cancellation.java`
+
 ---
 
 ## How to Run
@@ -63,5 +68,5 @@ The project is organized by use cases, with each major feature implemented in it
    ```
 2. Run a specific use case entry point:
    ```bash
-   java UseCase9ErrorHandling
+   java UseCase10Cancellation
    ```

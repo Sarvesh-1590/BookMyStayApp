@@ -66,6 +66,7 @@ public class RoomAllocationService {
 
         // 2. Proceed with Allocation
         String roomId = generateRoomId(roomType);
+        reservation.setRoomId(roomId); // Linked for Case 10 rollback
 
         // Uniqueness Enforcement
         allocatedRoomIds.add(roomId);
