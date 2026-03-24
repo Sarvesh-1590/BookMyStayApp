@@ -18,9 +18,10 @@ import java.util.Map;
  * This avoids multiple sources of truth and 
  * keeps responsibilities clearly separated.
  * 
- * @version 3.1
+ * @version 12.0
  */
-public class RoomInventory {
+public class RoomInventory implements java.io.Serializable {
+    private static final long serialVersionUID = 1L;
 
     /**
      * Stores available room count for each room type.

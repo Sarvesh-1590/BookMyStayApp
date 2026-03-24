@@ -12,9 +12,10 @@
  * At this stage, a reservation only captures 
  * intent, not confirmation or room allocation.
  * 
- * @version 5.0
+ * @version 12.0
  */
-public class Reservation {
+public class Reservation implements java.io.Serializable {
+    private static final long serialVersionUID = 1L;
 
     /** Name of the guest making the booking. */
     private String guestName;

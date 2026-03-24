@@ -63,6 +63,11 @@ The project is organized by use cases, with each major feature implemented in it
 - **Key Concepts**: Race Conditions, Thread Safety, Synchronized Access, Critical Sections.
 - **Entry Point**: `UseCase11ConcurrentBooking.java`
 
+#### [Use Case 12: Data Persistence & System Recovery](https://github.com/Sarvesh-1590/BookMyStayApp/tree/use-case-12-data-persistence-system-recovery)
+- **Goal**: Ensure system state survives application restarts using file-based persistence.
+- **Key Concepts**: Persistence, Serialization/Deserialization, Stateful Applications, Failure Tolerance.
+- **Entry Point**: `UseCase12Persistence.java`
+
 ---
 
 ## How to Run
@@ -73,5 +78,5 @@ The project is organized by use cases, with each major feature implemented in it
    ```
 2. Run a specific use case entry point:
    ```bash
-   java UseCase11ConcurrentBooking
+   java UseCase12Persistence
    ```

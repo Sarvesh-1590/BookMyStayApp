@@ -16,9 +16,10 @@ import java.util.List;
  * It ensures that data is stored in the 
  * order of confirmation (FIFO).
  * 
- * @version 8.0
+ * @version 12.0
  */
-public class BookingHistory {
+public class BookingHistory implements java.io.Serializable {
+    private static final long serialVersionUID = 1L;
 
     /** Internal list to store confirmed reservations. */
     private List<Reservation> history;
