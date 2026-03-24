@@ -15,7 +15,7 @@ import java.util.Queue;
  * Requests are processed strictly 
  * in the order they are received.
  * 
- * @version 5.0
+ * @version 11.0
  */
 public class BookingRequestQueue {
 
@@ -29,20 +29,22 @@ public class BookingRequestQueue {
 
     /**
      * Adds a booking request to the queue.
+     * Synchronized to ensure thread-safe submission.
      * 
      * @param reservation booking request
      */
-    public void addRequest(Reservation reservation) {
+    public synchronized void addRequest(Reservation reservation) {
         requestQueue.offer(reservation);
     }
 
     /**
      * Retrieves and removes the next
      * booking request from the queue.
+     * Synchronized to prevent duplicate processing.
      * 
      * @return next reservation request
      */
-    public Reservation getNextRequest() {
+    public synchronized Reservation getNextRequest() {
         return requestQueue.poll();
     }
 

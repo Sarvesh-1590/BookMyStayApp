@@ -58,6 +58,11 @@ The project is organized by use cases, with each major feature implemented in it
 - **Key Concepts**: State Reversal, Stack Data Structure, LIFO Rollback Logic, Inventory Restoration.
 - **Entry Point**: `UseCase10Cancellation.java`
 
+#### [Use Case 11: Concurrent Booking Simulation (Thread Safety)](https://github.com/Sarvesh-1590/BookMyStayApp/tree/use-case-11-concurrent-booking-thread-safety)
+- **Goal**: Demonstrate correctness and state consistency under multi-threaded, concurrent access.
+- **Key Concepts**: Race Conditions, Thread Safety, Synchronized Access, Critical Sections.
+- **Entry Point**: `UseCase11ConcurrentBooking.java`
+
 ---
 
 ## How to Run
@@ -68,5 +73,5 @@ The project is organized by use cases, with each major feature implemented in it
    ```
 2. Run a specific use case entry point:
    ```bash
-   java UseCase10Cancellation
+   java UseCase11ConcurrentBooking
    ```

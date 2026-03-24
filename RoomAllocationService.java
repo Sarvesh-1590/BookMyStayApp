@@ -49,11 +49,14 @@ public class RoomAllocationService {
      * Confirms a booking request by assigning 
      * a unique room ID and updating inventory.
      * 
+     * Synchronized to ensure exclusive access to 
+     * inventory and allocation tracking.
+     * 
      * @param reservation booking request
      * @param inventory centralized room inventory
      * @throws InvalidBookingException if validation or state check fails
      */
-    public void allocateRoom(Reservation reservation, RoomInventory inventory) 
+    public synchronized void allocateRoom(Reservation reservation, RoomInventory inventory) 
             throws InvalidBookingException {
         
         // 1. Validate before any allocation (Fail-Fast)
