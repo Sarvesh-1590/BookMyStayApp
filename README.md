@@ -43,6 +43,11 @@ The project is organized by use cases, with each major feature implemented in it
 - **Key Concepts**: One-to-Many Relationship, Business Extensibility, Composition over Inheritance, Cost Aggregation.
 - **Entry Point**: `UseCase7AddOnServiceSelection.java`
 
+#### [Use Case 8: Booking History & Reporting](https://github.com/Sarvesh-1590/BookMyStayApp/tree/use-case-8-booking-history-reporting)
+- **Goal**: Introduce historical tracking of confirmed bookings for audits and operational visibility.
+- **Key Concepts**: List Data Structure, Ordered Storage, Operational Visibility, Persistence Mindset.
+- **Entry Point**: `UseCase8BookingHistory.java`
+
 ---
 
 ## How to Run
@@ -53,5 +58,5 @@ The project is organized by use cases, with each major feature implemented in it
    ```
 2. Run a specific use case entry point:
    ```bash
-   java UseCase7AddOnServiceSelection
+   java UseCase8BookingHistory
    ```
